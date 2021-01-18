@@ -1,0 +1,7 @@
+{
+  "data": "${plainTextB64}",
+  "dataEncoding": "BASE64",
+  "params": {
+    "mode": "HMAC_SHA256"
+  }
+}

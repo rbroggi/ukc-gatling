@@ -1,0 +1,5 @@
+{
+  "data": "${plainTextB64}",
+  "ecdsaMode": "ECDSA",
+  "dataEncoding": "BASE64"
+}

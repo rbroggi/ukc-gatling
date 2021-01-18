@@ -1,0 +1,19 @@
+{
+  "cipher": {
+    "cipherTextBase64": "${cipherB64}",
+    "ivBase64": "vRiRaTd0ByqsY6WW"
+  },
+  "symmetricParams": {
+    "mode": "GCM",
+    "iv": {
+      "value": "BD1891693774072AAC63A596",
+      "encoding": "HEX"
+    },
+    "aad": {
+      "value": "6C630609F640A6AB6105D1A738EDBE06",
+      "encoding": "HEX"
+    },
+    "tagLength": "16"
+  },
+  "outputEncoding": "PLAIN"
+}

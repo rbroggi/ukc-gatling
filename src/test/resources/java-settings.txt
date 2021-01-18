@@ -1,0 +1,36 @@
+JBoss
+osysops  30376 28009  0 Aug08 ?        00:02:47 /farequote/FQProduction/Components/JavaDevelopmentKit/Common/Jar/jdk1.8.0_92/bin/java -D[Server:AdvancedBuckets_Server_FQB] -server -DPHASE=FqB -DAPP=FQ -Dlog4j.configuration=file:/farequote/FQProduction/Config/FqB/log4j.ojf.xml -Djava.io.tmpdir=/farequote/FQProduction/ASJ2EGenerated/tmp -Dorg.apache.catalina.authenticator.AuthenticatorBase.CHANGE_SESSIONID_ON_AUTH=true -Djboss.management.native.port=5656 -Dorg.apache.catalina.session.ManagerBase.SESSION_ID_ALPHABET=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789$-_ -Djboss.modules.system.pkgs=org.jboss.byteman -Djboss.domain.servers.dir=/farequote/FQProduction/Domains/Config/FQProduction/servers -Dorg.apache.catalina.connector.USE_BODY_ENCODING_FOR_QUERY_STRING=true -Djboss.domain.base.dir=/farequote/FQProduction/Domains/Config/FQProduction -Djava.net.preferIPv4Stack=true -Dweb.connector.protocol=HTTP/1.1 -Dorg.apache.coyote.http11.Http11Protocol.SERVER='' -Djboss.home.dir=/farequote/FQProduction/JBoss -Djboss.domain.config.dir=/farequote/FQProduction/Domains/Config/FQProduction/config -Djboss.modules.policy-permissions=true -Dorg.apache.catalina.connector.URI_ENCODING=UTF-8 -Djava.awt.headless=true -Djboss.management.http.port=7101 -Djboss.server.log.dir=/farequote/FQProduction/Domains/Config/FQProduction/servers/AdvancedBuckets_Server_FQB/log -Djboss.server.temp.dir=/farequote/FQProduction/Domains/Config/FQProduction/servers/AdvancedBuckets_Server_FQB/tmp -Djboss.server.data.dir=/farequote/FQProduction/Domains/Config/FQProduction/servers/AdvancedBuckets_Server_FQB/data -Dlogging.configuration=file:/farequote/FQProduction/Domains/Config/FQProduction/servers/AdvancedBuckets_Server_FQB/data/logging.properties -jar /farequote/FQProduction/JBoss/jboss-modules.jar -mp /farequote/FQProduction/JBoss/modules -jaxpmodule javax.xml.jaxp-provider org.jboss.as.server
+
+workerthreadpool:
+  # The initial number of threads to spawn when the queue will be created
+  initialSize: 0
+  # The maximum number of task that can be put in a queue before task rejection
+  queueSize: 512
+  # Sets the maximum allowed number of threads to execute tasks
+  highWaterMark: 50
+  # Sets the number of threads to execute tasks
+  lowWaterMark: 10
+  # When the number of threads is greater than lowWaterMark this is the maximum time that excess idle threads will wait for new tasks before terminating
+  dequeueTimeout: 120000
+  # If at some point, the worker thread pool queue is more than x% full, a log will be added in the ORC functional logs
+  minPercentageForLogging: 90
+
+
+Edge
+osysops  31413     1  0 Aug08 ?        00:00:38 /farequote/FQProduction/Components/JavaDevelopmentKit/Common/Jar/jdk1.7.0_60/bin/java -server -Xms512m -Xmx512m -XX:MaxPermSize=512m -Ddaemon.name=JConnect_AdvancedBuckets -Dcode.level.specification=FqB -Dedge.proxy.conf=file:///farequote/FQProduction/Config/FqB/JConnect_AdvancedBuckets-configuration.json -Dlog4j.configuration=file:///farequote/FQProduction/Config/FqB/log4j.properties com.amadeus.jconnect.tcil.proxy.EdgeProxy
+
+{
+  "incoming" : {
+    "tcilPort" : 7202,
+    "httpHost" : "psvcip01",
+    "httpPort" : 7203,
+    "soapPrefix" : "/SSP-ORC",
+
+    "maxPooledConnections" : 800,
+
+    "responseTimeout": 62
+
+  },
+  "logMetrics" : false,
+  "jmxMetrics" : false
+}

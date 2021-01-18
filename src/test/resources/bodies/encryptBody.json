@@ -1,0 +1,16 @@
+{
+  "clearText": "${plainTextB64}",
+  "symmetricParams": {
+    "mode": "GCM",
+    "iv": {
+      "value": "BD1891693774072AAC63A596",
+      "encoding": "HEX"
+    },
+    "aad": {
+      "value": "6C630609F640A6AB6105D1A738EDBE06",
+      "encoding": "HEX"
+    },
+    "tagLength": "16"
+  },
+  "dataEncoding": "BASE64"
+}
