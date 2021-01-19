@@ -25,7 +25,8 @@ They can be passed as commandline arguments as in the example below.
 1. **ipPort** "ip:port" string 
 1. **key** key to be targeted for the operation 
 1. **partition** to be targeted
-1. **auth** is a basic HTTP authentication to be provided as base64("user@partition:password")
+1. **basicAuth** is a basic HTTP authentication to be provided as base64("user@partition:password")
+1. **bearerAuth** is a bearer HTTP authentication to be provided as base64 string. This one will be prefered over basicAuth
 1. **duration** of the simulation in minutes 
 1. **payloadSize** size of the payload in bytes in which the operations will be done
 

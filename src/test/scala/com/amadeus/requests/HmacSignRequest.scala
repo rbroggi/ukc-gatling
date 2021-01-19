@@ -6,7 +6,7 @@ import io.gatling.http.Predef._
 
 object HmacSignRequest {
 
-  val headers = Map("Authorization" -> s"Basic ${auth}")
+  val headers = Map("Authorization" -> auth)
 
   val sign = http("Hmac")
     .post(hmacSignUrl)

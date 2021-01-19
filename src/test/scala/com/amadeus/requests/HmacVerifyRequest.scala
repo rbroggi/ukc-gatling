@@ -6,7 +6,7 @@ import io.gatling.http.Predef._
 
 object HmacVerifyRequest {
 
-  val headers = Map("Authorization" -> s"Basic ${auth}")
+  val headers = Map("Authorization" -> auth)
 
   val verify = http("Hmac Verify")
     .post(hmacVerifyUrl)

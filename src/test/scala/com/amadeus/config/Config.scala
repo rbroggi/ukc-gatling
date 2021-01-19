@@ -7,7 +7,9 @@ object Config {
   val key = getProperty("key", "myKey")
   val partition = getProperty("partition", "myPartition")
   // base64("user@partition:password")
-  val auth = getProperty("auth", "dXNlckBwYXJ0aXRpb246cGFzc3dvcmQ=")
+  val basicAuth = getProperty("basicAuth", "dXNlckBwYXJ0aXRpb246cGFzc3dvcmQ=")
+  val bearerAuth = getProperty("bearerAuth", "invalid")
+  val auth = if (bearerAuth.equals("invalid")) s"Basic ${basicAuth}" else s"Bearer ${bearerAuth}";
   val users = Integer.getInteger("users", 100).toInt
   val duration = Integer.getInteger("duration", 1).toInt
   val payloadSize = Integer.getInteger("payloadSize", 200).toInt

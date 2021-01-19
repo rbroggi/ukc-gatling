@@ -1,12 +1,12 @@
 package com.amadeus.requests
 
-import com.amadeus.config.Config.{auth, hmacSignUrl, partition, signUrl}
+import com.amadeus.config.Config.{auth, partition, signUrl}
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
 
 object EcdsaSignRequest {
 
-  val headers = Map("Authorization" -> s"Basic ${auth}")
+  val headers = Map("Authorization" -> auth)
 
   val sign = http("ECDSA sign")
     .post(signUrl)

@@ -6,7 +6,7 @@ import io.gatling.http.Predef._
 
 object EncryptRequest {
 
-  val headers = Map("Authorization" -> s"Basic ${auth}")
+  val headers = Map("Authorization" -> auth)
 
   val encrypt = http("Encrypt")
     .post(encryptionUrl)
