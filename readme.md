@@ -33,7 +33,7 @@ They can be passed as commandline arguments as in the example below.
 
 To run a simulation use the following command
 ```bash
-mvn gatling:test -Dgatling.simulationClass=com.amadeus.simulations.<nameSimulation> -DipPort="ip:port" -Dkey="<keyName>" -Dpartition="<partitionName>" -Dauth="<basicHTTPAuthentication>" -Dduration=<simulationDuration> -DpayloadSize=<payloadSize> 
+mvn gatling:test -Dgatling.simulationClass=com.amadeus.simulations.<nameSimulation> -DipPort="ip:port" -Dkey="<keyName>" -Dpartition="<partitionName>" [-DbasicAuth="<basicHTTPAuthentication>" or  -DbearerAuth="<bearerToken>"] -Dduration=<simulationDuration> -DpayloadSize=<payloadSize> 
 ```
 
 Example for :
@@ -50,5 +50,8 @@ Example for :
 1. using payloads of 4000bytes (4kB)
 
 ```bash
-mvn gatling:test -Dgatling.simulationClass=com.amadeus.simulations.SymmetricEncryptionDecryptionSimulation -DipPort="localhost:8443" -Dkey="symKey" -Dpartition="nicePartition" -Dauth="bmljZVVzZXJAbmljZVBhcnRpdGlvbjp2ZXJ5U2VjdXJl" -Dduration=5 -DpayloadSize=4000
+mvn gatling:test -Dgatling.simulationClass=com.amadeus.simulations.SymmetricEncryptionDecryptionSimulation -DipPort="localhost:8443" -Dkey="symKey" -Dpartition="nicePartition" -DbasicAuth="bmljZVVzZXJAbmljZVBhcnRpdGlvbjp2ZXJ5U2VjdXJl" -Dduration=5 -DpayloadSize=4000
 ```
+
+To have more insights on the parameters that can be passed to a simulation, please refer to the `src/test/scala/com/amadeus/config/Config.scala` 
+file and check the specific simulation case you are launching in the `src/test/scala/com/amadeus/simulations/` folder. 

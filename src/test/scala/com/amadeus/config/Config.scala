@@ -14,6 +14,9 @@ object Config {
   val duration = Integer.getInteger("duration", 1).toInt
   val payloadSize = Integer.getInteger("payloadSize", 200).toInt
 
+  val finalUserCount = Integer.getInteger("finalUserCount", 500).toInt
+  val rampupDuration = Integer.getInteger("rampupDuration", 60).toInt
+
   // Derived properties
   val baseUrl = s"https://${targetIPPort}"
   val encryptionUrl = s"${baseUrl}/api/v1/keys/${key}/encrypt"
